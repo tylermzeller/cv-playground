@@ -50,7 +50,8 @@ def gray2bgr(img):
 
 def draw_points(img, points, size=25, color=(0, 0, 255)):
     for x, y in points:
-        cv2.circle(img, (int(x),int(y)), size, color, -1)
+        img = cv2.circle(img, (int(x),int(y)), size, color, -1)
+    return img
 
 def rotate_image(image, angle):
     image_center = tuple(np.array(image.shape[1::-1]) / 2)
